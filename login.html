@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Login | VYORA</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Early Theme Init -->
+    <script>
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+        document.addEventListener('DOMContentLoaded', function() {
+          document.body.classList.add('dark-mode');
+        });
+      }
+    </script>
+  </head>
+
+  <body class="auth-page">
+    <div class="auth-container">
+      <!-- LEFT SIDE -->
+      <div class="auth-welcome">
+        <div class="auth-logo">VYORA</div>
+
+        <h1>Share your world.</h1>
+
+        <p>
+          Connect, create and discover something new with the VYORA community.
+        </p>
+
+        <div class="auth-decoration">✨ &nbsp; 💜 &nbsp; 🌸</div>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <div class="auth-form">
+        <div class="auth-form-header">
+          <h2>Welcome Back 👋</h2>
+          <p>Login to continue to VYORA</p>
+        </div>
+
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="email"> Email </label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password"> Password </label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+
+          <div class="form-options">
+            <label>
+              <input type="checkbox" />
+              Remember me
+            </label>
+
+            <a href="#"> Forgot Password? </a>
+          </div>
+
+          <button type="submit" class="auth-btn">Login</button>
+        </form>
+
+        <div class="auth-divider">
+          <span>OR</span>
+        </div>
+
+        <p class="auth-register">
+          Don't have an account?
+          <a href="register.html"> Create Account </a>
+        </p>
+
+        <a href="index.html" class="back-home"> ← Back to VYORA </a>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

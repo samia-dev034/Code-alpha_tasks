@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Notifications | VYORA</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Early Theme Init -->
+    <script>
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+        document.addEventListener('DOMContentLoaded', function() {
+          document.body.classList.add('dark-mode');
+        });
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <a href="index.html" class="mobile-logo"><span>V</span> VYORA</a>
+
+      <div class="search-box">
+        <span><i class="bi bi-search"></i></span>
+        <input type="text" placeholder="Search people, posts, or topics..." />
+      </div>
+
+      <div class="nav-right">
+        <button class="icon-btn theme-btn" title="Toggle Theme">
+          <i class="bi bi-moon"></i>
+        </button>
+
+        <a href="notification.html" class="icon-btn notification notification-bell" title="Notifications">
+          <i class="bi bi-bell"></i>
+          <small>3</small>
+        </a>
+
+        <div class="user-menu">
+          <div class="user-mini" id="userMenuButton">
+            <img src="public/assests/images/avatars/avatar_1.jpg" alt="User avatar" />
+            <span>Samia</span>
+          </div>
+
+          <div class="profile-dropdown" id="profileDropdown">
+            <div class="dropdown-user">
+              <img
+                src="public/assests/images/avatars/avatar_1.jpg"
+                id="dropdownAvatar"
+                alt="Avatar"
+              />
+
+              <div>
+                <h3 id="dropdownName">Samia</h3>
+                <p id="dropdownUsername">@samia</p>
+              </div>
+            </div>
+
+            <hr />
+
+            <a href="profile.html"> 👤 View Profile </a>
+            <a href="setting.html"> ⚙️ Settings </a>
+            <button id="logoutBtn">↪ Logout</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- NOTIFICATIONS -->
+    <main class="notifications-page">
+      <div class="notifications-header">
+        <div>
+          <h1>Notifications</h1>
+          <p>Stay updated with your VYORA activity ✨</p>
+        </div>
+
+        <button class="mark-read-btn">Mark all as read</button>
+      </div>
+
+      <!-- TODAY -->
+      <section class="notification-section">
+        <h2>Today</h2>
+
+        <div class="notification-card unread">
+          <img
+            src="public/assests/images/avatars/avatar_2.avif"
+            class="notification-avatar"
+            alt="User"
+          />
+
+          <div class="notification-content">
+            <p>
+              <strong>Ayesha Khan</strong>
+              liked your post.
+            </p>
+
+            <span>5 minutes ago</span>
+          </div>
+
+          <div class="notification-icon">❤️</div>
+        </div>
+
+        <div class="notification-card unread">
+          <img
+            src="public/assests/images/avatars/avatar_3.avif"
+            class="notification-avatar"
+            alt="User"
+          />
+
+          <div class="notification-content">
+            <p>
+              <strong>Hammad Rizvi</strong>
+              started following you.
+            </p>
+
+            <span>20 minutes ago</span>
+          </div>
+
+          <button class="notification-action">Following</button>
+        </div>
+
+        <div class="notification-card">
+          <img
+            src="public/assests/images/avatars/avatar_4.avif"
+            class="notification-avatar"
+            alt="User"
+          />
+
+          <div class="notification-content">
+            <p>
+              <strong>Sara Ahmed</strong>
+              commented on your post.
+            </p>
+
+            <span>1 hour ago</span>
+          </div>
+
+          <div class="notification-icon">💬</div>
+        </div>
+      </section>
+
+      <!-- YESTERDAY -->
+      <section class="notification-section">
+        <h2>Yesterday</h2>
+
+        <div class="notification-card">
+          <img
+            src="public/assests/images/avatars/avatar_5.avif"
+            class="notification-avatar"
+            alt="User"
+          />
+
+          <div class="notification-content">
+            <p>
+              <strong>Ali Hassan</strong>
+              liked your post.
+            </p>
+
+            <span>Yesterday</span>
+          </div>
+
+          <div class="notification-icon">❤️</div>
+        </div>
+
+        <div class="notification-card">
+          <img
+            src="public/assests/images/avatars/avatar_6.avif"
+            class="notification-avatar"
+            alt="User"
+          />
+
+          <div class="notification-content">
+            <p>
+              <strong>Maham</strong>
+              started following you.
+            </p>
+
+            <span>Yesterday</span>
+          </div>
+
+          <button class="notification-action">Following</button>
+        </div>
+      </section>
+
+      <!-- THIS WEEK -->
+      <section class="notification-section">
+        <h2>This Week</h2>
+
+        <div class="notification-card">
+          <img
+            src="public/assests/images/avatars/avatar_2.avif"
+            class="notification-avatar"
+            alt="User"
+          />
+
+          <div class="notification-content">
+            <p>
+              <strong>Ayesha Khan</strong>
+              mentioned you in a comment.
+            </p>
+
+            <span>3 days ago</span>
+          </div>
+
+          <div class="notification-icon">💬</div>
+        </div>
+      </section>
+    </main>
+
+    <!-- MOBILE NAV -->
+    <nav class="mobile-nav">
+      <a href="index.html">
+        <i class="bi bi-house"></i>
+        <small>Home</small>
+      </a>
+
+      <a href="explore.html">
+        <i class="bi bi-search"></i>
+        <small>Explore</small>
+      </a>
+
+      <a href="index.html" class="mobile-create">
+        <i class="bi bi-plus"></i>
+      </a>
+
+      <a href="notification.html" class="active">
+        <i class="bi bi-bell"></i>
+        <small>Activity</small>
+      </a>
+
+      <a href="profile.html">
+        <i class="bi bi-person"></i>
+        <small>Profile</small>
+      </a>
+    </nav>
+
+    <script src="script.js"></script>
+  </body>
+</html>

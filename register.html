@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Create Account | VYORA</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Early Theme Init -->
+    <script>
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+        document.addEventListener('DOMContentLoaded', function() {
+          document.body.classList.add('dark-mode');
+        });
+      }
+    </script>
+  </head>
+
+  <body class="auth-page">
+    <div class="auth-container">
+      <!-- LEFT SIDE -->
+      <div class="auth-welcome">
+        <div class="auth-logo">VYORA</div>
+
+        <h1>Join VYORA.</h1>
+
+        <p>
+          Create your account and start sharing your world with the VYORA
+          community.
+        </p>
+
+        <div class="auth-decoration">✨ &nbsp; 💜 &nbsp; 🌸</div>
+      </div>
+
+      <!-- REGISTER FORM -->
+      <div class="auth-form">
+        <div class="auth-form-header">
+          <h2>Create Account ✨</h2>
+
+          <p>Join VYORA today</p>
+        </div>
+
+        <form id="registerForm">
+          <!-- NAME -->
+          <div class="form-group">
+            <label for="name"> Full Name </label>
+
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <!-- USERNAME -->
+          <div class="form-group">
+            <label for="username"> Username </label>
+
+            <input type="text" id="username" placeholder="@username" required />
+          </div>
+
+          <!-- EMAIL -->
+          <div class="form-group">
+            <label for="registerEmail"> Email </label>
+
+            <input
+              type="email"
+              id="registerEmail"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <!-- PASSWORD -->
+          <div class="form-group">
+            <label for="registerPassword"> Password </label>
+
+            <input
+              type="password"
+              id="registerPassword"
+              placeholder="Create a password"
+              required
+            />
+          </div>
+
+          <!-- CONFIRM PASSWORD -->
+          <div class="form-group">
+            <label for="confirmPassword"> Confirm Password </label>
+
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="Confirm your password"
+              required
+            />
+          </div>
+
+          <!-- BUTTON -->
+          <button type="submit" class="auth-btn">Create Account</button>
+        </form>
+
+        <div class="auth-divider">
+          <span>OR</span>
+        </div>
+
+        <p class="auth-register">
+          Already have an account?
+
+          <a href="login.html"> Login </a>
+        </p>
+
+        <a href="index.html" class="back-home"> ← Back to VYORA </a>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

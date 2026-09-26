@@ -1,2 +1,2 @@
-# Code-alpha_tasks
-code alpha internship tasks
+# VYORA
+VYORA - Social Media Web Application

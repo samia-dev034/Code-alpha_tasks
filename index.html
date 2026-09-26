@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>VYORA | Share Your World</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Early Theme Init -->
+    <script>
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark-mode')
+        document.addEventListener('DOMContentLoaded', function () {
+          document.body.classList.add('dark-mode')
+        })
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+      <a href="index.html" class="mobile-logo"><span>V</span> VYORA</a>
+
+      <div class="search-box">
+        <span><i class="bi bi-search"></i></span>
+        <input type="text" placeholder="Search people, posts, or topics..." />
+      </div>
+
+      <div class="nav-right">
+        <button class="icon-btn theme-btn" title="Toggle Theme">
+          <i class="bi bi-moon"></i>
+        </button>
+
+        <a
+          href="notification.html"
+          class="icon-btn notification"
+          title="Notifications"
+        >
+          <i class="bi bi-bell"></i>
+          <small>3</small>
+        </a>
+
+        <div class="user-menu">
+          <div class="user-mini" id="userMenuButton">
+            <img src="public/assests/images/avatars/avatar_1.jpg" />
+            <span>Samia</span>
+          </div>
+
+          <div class="profile-dropdown" id="profileDropdown">
+            <div class="dropdown-user">
+              <img
+                src="public/assests/images/avatars/avatar_1.jpg"
+                id="dropdownAvatar"
+              />
+
+              <div>
+                <h3 id="dropdownName">Samia</h3>
+                <p id="dropdownUsername">@samia</p>
+              </div>
+            </div>
+
+            <hr />
+
+            <a href="profile.html"> 👤 View Profile </a>
+
+            <a href="setting.html"> ⚙️ Settings </a>
+
+            <button id="logoutBtn">↪ Logout</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= MAIN LAYOUT ================= -->
+    <div class="layout">
+      <!-- ================= LEFT SIDEBAR ================= -->
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="logo">V</div>
+
+          <div>
+            <h1>VYORA</h1>
+            <p>Share your world.</p>
+          </div>
+        </div>
+
+        <nav class="navigation">
+          <a href="index.html" class="nav-link active">
+            <span><i class="bi bi-house"></i></span>
+            Home
+          </a>
+
+          <a href="explore.html" class="nav-link">
+            <span><i class="bi bi-search"></i></span>
+            Explore
+          </a>
+
+          <a href="notification.html" class="nav-link">
+            <span><i class="bi bi-bell"></i></span>
+            Notifications
+            <b>3</b>
+          </a>
+
+          <a href="#" class="nav-link">
+            <span><i class="bi bi-envelope"></i></span>
+            Messages
+          </a>
+
+          <a href="#" class="nav-link create-link">
+            <span><i class="bi bi-plus"></i></span>
+            Create Post
+          </a>
+
+          <a href="profile.html" class="nav-link">
+            <span><i class="bi bi-person"></i></span>
+            Profile
+          </a>
+
+          <a href="setting.html" class="nav-link">
+            <span><i class="bi bi-gear"></i></span>
+            Settings
+          </a>
+        </nav>
+
+        <!-- Promo Card -->
+        <div class="promo-card">
+          <div class="promo-icon">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+
+          <h2>
+            Connect<br />
+            Create<br />
+            Be You!
+          </h2>
+
+          <p>Join VYORA and share your moments with the world.</p>
+
+          <button>Explore Now <i class="bi bi-arrow-right"></i></button>
+        </div>
+
+        <div class="good-vibes">
+          <div>🌿</div>
+          <strong>
+            Good<br />
+            Vibes Only <i class="bi bi-heart"></i>
+          </strong>
+        </div>
+      </aside>
+
+      <!-- ================= CENTER FEED ================= -->
+      <main class="feed">
+        <!-- Create Post -->
+        <section class="create-post">
+          <div class="create-top">
+            <input
+              type="text"
+              id="postInput"
+              placeholder="What's on your mind?"
+            />
+          </div>
+
+          <div class="selected-media" id="selectedMedia"></div>
+
+          <div class="create-actions">
+            <label class="create-option">
+              📷 Photo
+              <input type="file" id="photoInput" accept="image/*" hidden />
+            </label>
+
+            <label class="create-option">
+              🎥 Video
+              <input type="file" id="videoInput" accept="video/*" hidden />
+            </label>
+
+            <button type="button" class="create-option" id="tagPeopleBtn">
+              👥 Tag People
+            </button>
+
+            <button type="button" class="post-btn">Post</button>
+          </div>
+        </section>
+
+        <!-- Stories -->
+        <section class="stories-section">
+          <div class="section-heading">
+            <h2>Stories</h2>
+            <a href="#"> See All <i class="bi bi-arrow-right"></i> </a>
+          </div>
+
+          <div class="stories">
+            <div class="story">
+              <img
+                src="public/assests/images/posts/post1.avif"
+                alt="Your Story"
+              />
+
+              <div class="story-avatar">
+                <img src="public/assests/images/avatars/avatar_1.jpg" alt="" />
+
+                <span>+</span>
+              </div>
+
+              <p>Your Story</p>
+            </div>
+
+            <div class="story">
+              <img src="public/assests/images/posts/post2.avif" alt="Story" />
+
+              <div class="story-avatar">
+                <img src="public/assests/images/avatars/avatar_2.avif" alt="" />
+              </div>
+
+              <p>Ayesha</p>
+            </div>
+
+            <div class="story">
+              <img src="public/assests/images/posts/post3.avif" alt="Story" />
+
+              <div class="story-avatar">
+                <img src="public/assests/images/avatars/avatar_3.avif" alt="" />
+              </div>
+
+              <p>Hammad</p>
+            </div>
+
+            <div class="story">
+              <img src="public/assests/images/posts/post4.avif" alt="Story" />
+
+              <div class="story-avatar">
+                <img src="public/assests/images/avatars/avatar_4.avif" alt="" />
+              </div>
+
+              <p>Sara</p>
+            </div>
+
+            <div class="story">
+              <img src="public/assests/images/posts/post5.avif" alt="Story" />
+
+              <div class="story-avatar">
+                <img src="public/assests/images/avatars/avatar_5.avif" alt="" />
+              </div>
+
+              <p>Ali</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= POST 1 ================= -->
+<article class="post-card">
+
+  <div class="post-header">
+
+    <div class="author">
+      <img
+        src="public/assests/images/avatars/avatar_2.avif"
+        alt="Ayesha"
+        class="avatar"
+      />
+
+      <div>
+        <h3>Ayesha Khan</h3>
+
+        <p>
+          @ayesha.khan · 2h ·
+          <i class="bi bi-globe2"></i>
+        </p>
+      </div>
+    </div>
+
+
+    <!-- THREE DOTS -->
+    <div class="post-menu-container">
+
+      <button class="more" onclick="togglePostMenu(this)">
+        <i class="bi bi-three-dots"></i>
+      </button>
+
+      <div class="post-menu">
+
+        <button onclick="editPost()">
+          <i class="bi bi-pencil"></i>
+          Edit Post
+        </button>
+
+        <button onclick="deletePost()">
+          <i class="bi bi-trash"></i>
+          Delete Post
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="post-content">
+
+    <p class="caption">
+      Finally finished my first web project! 🎉
+      <br />
+      Grateful for all the support and motivation.
+      On to the next one! 💻✨
+    </p>
+
+    <div class="hashtags">
+      #WebDevelopment #Learning #Progress #VYORA
+    </div>
+
+    <img
+      src="public/assests/images/posts/post1.avif"
+      alt="Web development workspace"
+      class="post-image"
+    />
+
+  </div>
+
+
+  <div class="post-actions">
+
+    <button class="like-btn">
+      <i class="bi bi-heart"></i>
+      <span>124</span>
+    </button>
+
+    <button class="comment-btn">
+      <i class="bi bi-chat"></i>
+      <span>18</span>
+    </button>
+
+    <button class="share-btn">
+      <i class="bi bi-arrow-up-right"></i>
+      Share
+    </button>
+
+    <button class="save-btn">
+      <i class="bi bi-bookmark"></i>
+    </button>
+
+  </div>
+
+</article>
+
+
+        <!-- ================= POST 2 ================= -->
+<article class="post-card">
+
+  <div class="post-header">
+
+    <div class="author">
+      <img
+        src="public/assests/images/avatars/avatar_7.avif"
+        alt="Hammad"
+        class="avatar"
+      />
+
+      <div>
+        <h3>Hammad Rizvi</h3>
+
+        <p>
+          @hammad.rizvi · 4h ·
+          <i class="bi bi-globe2"></i>
+        </p>
+      </div>
+    </div>
+
+
+    <!-- THREE DOTS -->
+    <div class="post-menu-container">
+
+      <button class="more" onclick="togglePostMenu(this)">
+        <i class="bi bi-three-dots"></i>
+      </button>
+
+      <div class="post-menu">
+
+        <button onclick="editPost()">
+          <i class="bi bi-pencil"></i>
+          Edit Post
+        </button>
+
+        <button onclick="deletePost()">
+          <i class="bi bi-trash"></i>
+          Delete Post
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="post-content">
+
+    <p class="caption">
+      Nature always has the best views. 🌿
+      <br />
+      Sometimes we just need to slow down and enjoy the little things.
+    </p>
+
+    <div class="hashtags">
+      #Nature #Travel #Lifestyle #VYORA
+    </div>
+
+    <img
+      src="public/assests/images/posts/post2.avif"
+      alt="Beautiful nature"
+      class="post-image"
+    />
+
+  </div>
+
+
+  <div class="post-actions">
+
+    <button class="like-btn">
+      <i class="bi bi-heart"></i>
+      <span>98</span>
+    </button>
+
+    <button class="comment-btn">
+      <i class="bi bi-chat"></i>
+      <span>12</span>
+    </button>
+
+    <button class="share-btn">
+      <i class="bi bi-arrow-up-right"></i>
+      Share
+    </button>
+
+    <button class="save-btn">
+      <i class="bi bi-bookmark"></i>
+    </button>
+
+  </div>
+
+</article>
+        </article>
+      </main>
+
+      <!-- ================= RIGHT SIDEBAR ================= -->
+      <aside class="right-sidebar">
+        <!-- Suggestions -->
+        <section class="side-card">
+          <div class="side-heading">
+            <h2>Suggested for You</h2>
+
+            <a href="#"> See All <i class="bi bi-arrow-right"></i> </a>
+          </div>
+
+          <div class="suggestion">
+            <img src="public/assests/images/avatars/avatar_4.avif" />
+
+            <div>
+              <h3>Sara Ahmad</h3>
+              <p>@sara.ahmad</p>
+            </div>
+
+            <button class="follow-btn" data-user-id="3">Follow</button>
+          </div>
+
+          <div class="suggestion">
+            <img src="public/assests/images/avatars/avatar_8.avif" />
+
+            <div>
+              <h3>Ali Raza</h3>
+              <p>@ali.raza</p>
+            </div>
+
+            <button class="follow-btn" data-user-id="4">Follow</button>
+          </div>
+
+          <div class="suggestion">
+            <img src="public/assests/images/avatars/avatar_6.avif" />
+
+            <div>
+              <h3>Hira Khan</h3>
+              <p>@hira.khan</p>
+            </div>
+
+            <button class="follow-btn" data-user-id="5">Follow</button>
+          </div>
+
+          <div class="suggestion">
+            <img src="public/assests/images/avatars/avatar_9.avif" />
+
+            <div>
+              <h3>Usama Sheikh</h3>
+              <p>@usama.sheikh</p>
+            </div>
+
+            <button class="follow-btn" data-user-id="6">Follow</button>
+          </div>
+
+          <div class="suggestion">
+            <img src="public/assests/images/avatars/avatar_3.avif" />
+
+            <div>
+              <h3>Zainab Noor</h3>
+              <p>@zainab.noor</p>
+            </div>
+
+            <button class="follow-btn" data-user-id="7">Follow</button>
+          </div>
+        </section>
+
+        <!-- Trending -->
+        <section class="side-card trending">
+          <div class="side-heading">
+            <h2>
+              <i class="bi bi-fire"></i>
+              Trending Topics
+            </h2>
+
+            <a href="#"> See All <i class="bi bi-arrow-right"></i> </a>
+          </div>
+
+          <div class="tags">
+            <span>#WebDevelopment</span>
+            <span>#Travel</span>
+            <span>#Food</span>
+            <span>#Photography</span>
+            <span>#Lifestyle</span>
+            <span>#Motivation</span>
+          </div>
+        </section>
+
+        <!-- Quick Links -->
+        <section class="side-card">
+          <div class="side-heading">
+            <h2>
+              <i class="bi bi-link-45deg"></i>
+              Quick Links
+            </h2>
+          </div>
+
+          <div class="quick-links">
+            <a href="profile.html">
+              <span>
+                <i class="bi bi-person"></i>
+                My Profile
+              </span>
+
+              <span>
+                <i class="bi bi-chevron-right"></i>
+              </span>
+            </a>
+
+            <a href="#">
+              <span>
+                <i class="bi bi-bookmark"></i>
+                Saved Posts
+              </span>
+
+              <span>
+                <i class="bi bi-chevron-right"></i>
+              </span>
+            </a>
+
+            <a href="#">
+              <span>
+                <i class="bi bi-pencil"></i>
+                Drafts
+              </span>
+
+              <span>
+                <i class="bi bi-chevron-right"></i>
+              </span>
+            </a>
+
+            <a href="#">
+              <span>
+                <i class="bi bi-question-circle"></i>
+                Help & Support
+              </span>
+
+              <span>
+                <i class="bi bi-chevron-right"></i>
+              </span>
+            </a>
+
+            <a href="login.html">
+              <span>
+                <i class="bi bi-box-arrow-right"></i>
+                Log Out
+              </span>
+
+              <span>
+                <i class="bi bi-chevron-right"></i>
+              </span>
+            </a>
+          </div>
+        </section>
+
+        <!-- Quote -->
+        <section class="quote-card">
+          <div class="mountains">🏔️</div>
+
+          <p>
+            “Small steps<br />
+            every day lead to<br />
+            big dreams.”
+          </p>
+
+          <span>
+            <i class="bi bi-heart"></i>
+          </span>
+        </section>
+      </aside>
+    </div>
+
+    <!-- ================= MOBILE NAV ================= -->
+    <nav class="mobile-nav">
+      <a href="index.html" class="active">
+        <i class="bi bi-house"></i>
+        <small>Home</small>
+      </a>
+
+      <a href="explore.html">
+        <i class="bi bi-search"></i>
+        <small>Explore</small>
+      </a>
+
+      <a href="index.html" class="mobile-create">
+        <i class="bi bi-plus"></i>
+      </a>
+
+      <a href="notification.html">
+        <i class="bi bi-bell"></i>
+        <small>Activity</small>
+      </a>
+
+      <a href="profile.html">
+        <i class="bi bi-person"></i>
+        <small>Profile</small>
+      </a>
+    </nav>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Your JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>

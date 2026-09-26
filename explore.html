@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Explore | VYORA</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Early Theme Init -->
+    <script>
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark-mode')
+        document.addEventListener('DOMContentLoaded', function () {
+          document.body.classList.add('dark-mode')
+        })
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <a href="index.html" class="mobile-logo"><span>V</span> VYORA</a>
+
+      <div class="search-box">
+        <span><i class="bi bi-search"></i></span>
+        <input type="text" placeholder="Search people, posts, or topics..." />
+      </div>
+
+      <div class="nav-right">
+        <button class="icon-btn theme-btn" title="Toggle Theme">
+          <i class="bi bi-moon"></i>
+        </button>
+
+        <a
+          href="notification.html"
+          class="icon-btn notification"
+          title="Notifications"
+        >
+          <i class="bi bi-bell"></i>
+          <small>3</small>
+        </a>
+
+        <div class="user-menu">
+          <div class="user-mini" id="userMenuButton">
+            <img src="public/assests/images/avatars/avatar_1.jpg" />
+            <span>Samia</span>
+          </div>
+
+          <div class="profile-dropdown" id="profileDropdown">
+            <div class="dropdown-user">
+              <img
+                src="public/assests/images/avatars/avatar_1.jpg"
+                id="dropdownAvatar"
+              />
+
+              <div>
+                <h3 id="dropdownName">Samia</h3>
+                <p id="dropdownUsername">@samia</p>
+              </div>
+            </div>
+
+            <hr />
+
+            <a href="profile.html"> 👤 View Profile </a>
+            <a href="setting.html"> ⚙️ Settings </a>
+            <button id="logoutBtn">↪ Logout</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="explore-page">
+      <!-- PAGE HEADING -->
+      <section class="explore-header">
+        <div>
+          <h1>Explore</h1>
+          <p>Discover something new on VYORA ✨</p>
+        </div>
+      </section>
+
+      <!-- TRENDING TOPICS -->
+      <section class="explore-section">
+        <h2>Trending Topics</h2>
+
+        <div class="topic-card" data-topic="WebDevelopment">
+             <span>💻</span>
+  <div>
+    <strong>#WebDevelopment</strong>
+    <small>1.2K posts</small>
+  </div>
+</div>
+
+         <div class="topic-card" data-topic="Study">
+            <span>📚</span>
+            <div>
+              <strong>#Study</strong>
+              <small>980 posts</small>
+            </div>
+          </div>
+
+          <div class="topic-card" data-topic="Travel">
+            <span>✈️</span>
+            <div>
+              <strong>#Travel</strong>
+              <small>850 posts</small>
+            </div>
+          </div>
+
+          <div class="topic-card" data-topic="Lifestyle">
+            <span>☕</span>
+            <div>
+              <strong>#Lifestyle</strong>
+              <small>760 posts</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+     
+      <!-- DISCOVER POSTS -->
+<section class="explore-section">
+  <div class="section-heading">
+    <div>
+      <h2>Discover Posts</h2>
+      <p>Popular posts from the VYORA community</p>
+    </div>
+  </div>
+
+  <div class="explore-grid">
+
+    <div class="explore-post" data-post="1">
+      <img src="public/assests/images/posts/post1.avif" alt="Post" />
+      <div class="explore-overlay">❤️ 245 &nbsp;&nbsp; 💬 32</div>
+    </div>
+
+    <div class="explore-post" data-post="2">
+      <img src="public/assests/images/posts/post2.avif" alt="Post" />
+      <div class="explore-overlay">❤️ 189 &nbsp;&nbsp; 💬 21</div>
+    </div>
+
+    <div class="explore-post" data-post="3">
+      <img src="public/assests/images/posts/post3.avif" alt="Post" />
+      <div class="explore-overlay">❤️ 312 &nbsp;&nbsp; 💬 45</div>
+    </div>
+
+    <div class="explore-post" data-post="4">
+      <img src="public/assests/images/posts/post4.avif" alt="Post" />
+      <div class="explore-overlay">❤️ 156 &nbsp;&nbsp; 💬 18</div>
+    </div>
+
+    <div class="explore-post" data-post="5">
+      <img src="public/assests/images/posts/post5.avif" alt="Post" />
+      <div class="explore-overlay">❤️ 278 &nbsp;&nbsp; 💬 36</div>
+    </div>
+
+    <div class="explore-post" data-post="6">
+      <img src="public/assests/images/posts/post1.avif" alt="Post" />
+      <div class="explore-overlay">❤️ 421 &nbsp;&nbsp; 💬 51</div>
+    </div>
+
+  </div>
+</section>
+    </main>
+
+    <!-- MOBILE NAV -->
+    <nav class="mobile-nav">
+      <a href="index.html">
+        <i class="bi bi-house"></i>
+        <small>Home</small>
+      </a>
+
+      <a href="explore.html" class="active">
+        <i class="bi bi-search"></i>
+        <small>Explore</small>
+      </a>
+
+      <a href="index.html" class="mobile-create">
+        <i class="bi bi-plus"></i>
+      </a>
+
+      <a href="notification.html">
+        <i class="bi bi-bell"></i>
+        <small>Activity</small>
+      </a>
+
+      <a href="profile.html">
+        <i class="bi bi-person"></i>
+        <small>Profile</small>
+      </a>
+    </nav>
+
+    <script src="script.js"></script>
+
+
+    <script src="script.js"></script>
+
+<script>
+  // =========================
+  // TOPIC CLICK
+  // =========================
+
+  const exploreTopics = document.querySelectorAll(".topic-card");
+
+  exploreTopics.forEach(function (topic) {
+    topic.addEventListener("click", function () {
+      const topicName = topic.getAttribute("data-topic");
+
+      alert("You clicked #" + topicName);
+    });
+  });
+
+
+  // =========================
+  // POST CLICK
+  // =========================
+
+  const explorePosts = document.querySelectorAll(".explore-post");
+
+  explorePosts.forEach(function (post) {
+    post.addEventListener("click", function () {
+      const postNumber = post.getAttribute("data-post");
+
+      alert("You clicked Post " + postNumber);
+    });
+  });
+</script>
+    
+  </body>
+</html>
